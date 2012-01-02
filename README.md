@@ -5,9 +5,18 @@
 
 Example
 -------
+.html
+
     <div id="menu_1" class="class_1 class_2"></div>
                                        ^
                                        |-cursor
+
+.js
+
+    $(".class_2").click(...);
+           ^
+           |-cursor
+
 
 Pressing the key `super+right` go to the first CSS declaration of class_2
 
