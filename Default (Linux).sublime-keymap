@@ -1,0 +1,3 @@
+[
+    { "keys": ["super+right"], "command": "goto_css_declaration" }
+]
