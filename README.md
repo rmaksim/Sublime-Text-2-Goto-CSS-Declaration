@@ -7,36 +7,45 @@ Example
 -------
 .html
 
-    <div id="menu_1" class="class_1 class_2"></div>
-                                       ^
-                                       |-cursor
+    <div id="box" class="box"></div>
+                          ^
+                          |-cursor
 
 .js
 
-    $(".class_2").click(...);
-           ^
-           |-cursor
+    $(".box").click(...);
+         ^
+         |-cursor
 
 
-Pressing the key `super+right` go to the first CSS declaration of class_2
+Pressing the key `super+right` or `super+left` go to the **first** CSS declaration of `box` (.class or #id => .box or #box), in this example the id `#box`
 
-    ...
-    .class_2           { ... }
-    ...
-    .b-header .class_2 { ... }
-    ...
-    .b-footer .class_2 { ... }
-    ...
-    #menu_1   .class_2 { ... }
-    ...
+    #box .box-shadow {
+        background: url(../img/box.jpg);
+        }
+    #box-shadow .box-shadow-1 {
+        box-shadow: 0 0 5px #ff0;
+        }
+        .box__inner {
+            box-shadow: 0 0 5px #f00;
+            }
 
-and if then press `F3` goes to the next CSS declaration of class_2.
+and if then press (in CSS file) `super+right` goes to the **next** CSS declaration of `box`, in this example the class `.box-shadow`, and next => `#box-shadow`, and next => `.box-shadow-1`, and next => `.box__inner`
+
+also you can press (in CSS file) `super+left` and goes to the **previous** CSS declaration of `box`.
 
 
 Default (Linux).sublime-keymap
 ------------------------------
     [
-        { "keys": ["super+right"], "command": "goto_css_declaration" }
+        {
+            "keys": ["super+right"], "command": "goto_css_declaration",
+            "args": {"goto": "next"}
+        },
+        {
+            "keys": ["super+left"],  "command": "goto_css_declaration",
+            "args": {"goto": "prev"}
+        }
     ]
 
 
