@@ -2,6 +2,11 @@
 
 ## Goto CSS declaration in an open *.css file from other file (*.html, *.js, *.other_extantion)
 
+**Forum Thread**
+http://www.sublimetext.com/forum/viewtopic.php?f=5&t=4397
+
+![blame screenshot](https://github.com/rmaksim/Sublime-Text-2-Goto-CSS-Declaration/raw/master/goto_css_declaration.gif)
+
 
 Example
 -------
