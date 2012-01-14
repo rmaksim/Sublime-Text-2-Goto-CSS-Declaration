@@ -1,5 +1,5 @@
 '''
-Goto-CSS-Declaration v0.1.0
+Goto-CSS-Declaration v0.2.0
 
 Goto CSS declaration in an open *.css file from:
     - *.html
@@ -13,12 +13,16 @@ Copyright (c) 2011 Razumenko Maksim <razumenko.maksim@gmail.com>
 MIT License, see http://opensource.org/licenses/MIT
 '''
 
-import sublime, sublime_plugin
+import sublime, sublime_plugin, re
 
 class GotoCssDeclarationCommand(sublime_plugin.TextCommand):
 
     def run(self, edit, goto):
         '''@param {String} goto = "next" | "prev"'''
+
+        settings  = sublime.load_settings(__name__ + '.sublime-settings')
+        css_files = settings.get("css_files", "[]")
+
 
         def goto_decl(f_class, f_id):
             '''Returns "next" or "prev" nearest class or id '''
@@ -36,12 +40,21 @@ class GotoCssDeclarationCommand(sublime_plugin.TextCommand):
                 return True
 
 
+        def is_css(file_name):
+            '''Returns True if file_name is .css (.less, .sass or .other from settings)'''
+
+            file_type = re.match('.*(\..*)$', file_name)
+            file_type = file_type.group(1) if file_type else ""
+
+            return file_type in css_files
+
+
         view = self.view
         self.cur_pos   = view.sel()[0].a
         self.scope_reg = view.extract_scope(self.cur_pos)
 
-        # if current window == *.CSS file
-        if view.file_name()[-3:] == "css":
+        # if current window == css styles file
+        if is_css(view.file_name()):
             class_or_id = view.settings().get('class_or_id')
 
             if class_or_id :
@@ -61,16 +74,12 @@ class GotoCssDeclarationCommand(sublime_plugin.TextCommand):
                         previous(view.find_all("\#" + class_or_id))
                     )
 
-
         # go to opened CSS file and find in them
         else:
             class_or_id = self.get_class_or_id();
             win = sublime.active_window()
             for view in win.views():
-                f_name = view.file_name()
-                # Find Results has no file_name
-                if f_name and f_name[-3:] == "css":
-
+                if is_css(view.file_name()):
                     view.settings().set('class_or_id', class_or_id)
 
                     if  goto_decl(

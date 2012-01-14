@@ -1,6 +1,9 @@
 #Goto-CSS-Declaration
 
-## Goto CSS declaration in an open \*.css file from other file (\*.html, \*.js, \*.other_extantion)
+**v0.2.0**
+
+---
+## Goto CSS declaration in an open \*.css (.less, .sass, .other) file from other file (\*.html, \*.js, \*.other_extantion)
 
 **Forum Thread**
 http://www.sublimetext.com/forum/viewtopic.php?f=5&t=4397
@@ -8,15 +11,14 @@ http://www.sublimetext.com/forum/viewtopic.php?f=5&t=4397
 ![Goto-CSS-Declaration](https://github.com/rmaksim/Sublime-Text-2-Goto-CSS-Declaration/raw/master/goto_css_declaration.gif)
 
 
-Example
--------
-.html
+### Example
+**html:**
 
     <div id="box" class="box"></div>
                           ^
                           |-cursor
 
-.js
+**js:**
 
     $(".box").click(...);
          ^
@@ -40,20 +42,23 @@ and if then press (in CSS file) `super+right` goes to the **next** CSS declarati
 also you can press (in CSS file) `super+left` and goes to the **previous** CSS declaration of `box`.
 
 
-Default (Linux).sublime-keymap
-------------------------------
+### [goto_css_declaration.sublime-settings](https://github.com/rmaksim/Sublime-Text-2-Goto-CSS-Declaration/blob/master/goto_css_declaration.sublime-settings)
+    {
+        "css_files": [".css", ".sass", ".less"]
+    }
+
+
+### Default (Linux).sublime-keymap
     super + right
     super + left
 
 
-Default (Windows).sublime-keymap
-------------------------------
+### Default (Windows).sublime-keymap
     super + .
     super + ,
 
 
-Copyright
----------
-### Copyright (c) 2011 Razumenko Maksim <razumenko.maksim@gmail.com>
+### Copyright
+**Copyright (c) 2011 Razumenko Maksim <razumenko.maksim@gmail.com>**
 
 MIT License, see http://opensource.org/licenses/MIT

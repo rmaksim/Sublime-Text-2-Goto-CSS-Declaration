@@ -16,6 +16,21 @@
                         "children":
                         [
                             {
+                                "command": "open_file", "args":
+                                {
+                                    "file": "${packages}/Goto-CSS-Declaration/goto_css_declaration.sublime-settings"
+                                },
+                                "caption": "Settings – Default"
+                            },
+                            {
+                                "command": "open_file", "args":
+                                {
+                                    "file": "${packages}/User/goto_css_declaration.sublime-settings"
+                                },
+                                "caption": "Settings – User"
+                            },
+                            { "caption": "-" },
+                            {
                                 "command": "open_file",
                                 "args": {
                                     "file": "${packages}/Goto-CSS-Declaration/Default (Windows).sublime-keymap",
