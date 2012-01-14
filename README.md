@@ -42,16 +42,14 @@ also you can press (in CSS file) `super+left` and goes to the **previous** CSS d
 
 Default (Linux).sublime-keymap
 ------------------------------
-    [
-        {
-            "keys": ["super+right"], "command": "goto_css_declaration",
-            "args": {"goto": "next"}
-        },
-        {
-            "keys": ["super+left"],  "command": "goto_css_declaration",
-            "args": {"goto": "prev"}
-        }
-    ]
+    super + right
+    super + left
+
+
+Default (Windows).sublime-keymap
+------------------------------
+    super + .
+    super + ,
 
 
 Copyright
