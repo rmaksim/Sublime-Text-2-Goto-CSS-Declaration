@@ -1,6 +1,6 @@
 #Goto-CSS-Declaration
 
-**v0.2.0**
+**v0.2.1**
 
 ---
 ## Goto CSS declaration in an open \*.css (.less, .sass, .other) file from other file (\*.html, \*.js, \*.other_extantion)

@@ -1,5 +1,5 @@
 '''
-Goto-CSS-Declaration v0.2.0
+Goto-CSS-Declaration v0.2.1
 
 Goto CSS declaration in an open *.css file from:
     - *.html
@@ -43,7 +43,7 @@ class GotoCssDeclarationCommand(sublime_plugin.TextCommand):
         def is_css(file_name):
             '''Returns True if file_name is .css (.less, .sass or .other from settings)'''
 
-            file_type = re.match('.*(\..*)$', file_name)
+            file_type = re.match('.*(\..*)$', file_name or "")
             file_type = file_type.group(1) if file_type else ""
 
             return file_type in css_files
