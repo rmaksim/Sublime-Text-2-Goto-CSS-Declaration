@@ -20,7 +20,7 @@ class GotoCssDeclarationCommand(sublime_plugin.TextCommand):
     def run(self, edit, goto):
         '''@param {String} goto = "next" | "prev"'''
 
-        settings  = sublime.load_settings(__name__ + '.sublime-settings')
+        settings  = sublime.load_settings('goto_css_declaration.sublime-settings')
         css_files = settings.get("css_files", "[]")
 
 
@@ -66,7 +66,7 @@ class GotoCssDeclarationCommand(sublime_plugin.TextCommand):
                     )
 
                 else: # goto == "prev"
-                    prev     = lambda x: filter(lambda y: y.a < self.cur_pos, x)
+                    prev     = lambda x: list(filter(lambda y: y.a < self.cur_pos, x))
                     previous = lambda x: x and prev(x)[-1] if prev(x) else False
 
                     goto_decl(
