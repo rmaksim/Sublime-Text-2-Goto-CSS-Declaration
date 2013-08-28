@@ -1,0 +1,3 @@
+[
+  { "caption" : "Go To CSS Declaration", "command": "goto_css_declaration", "args": {"goto": "next"} }
+]
