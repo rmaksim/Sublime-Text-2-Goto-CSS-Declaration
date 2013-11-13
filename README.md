@@ -1,6 +1,8 @@
 #Goto-CSS-Declaration
 
-**v0.2.1**
+**v0.3** - 99% refactoring
+
+**v0.2.1** - Fix empty view.file_name
 
 ---
 ## Goto CSS declaration in an open \*.css (.less, .sass, .other) file from other file (\*.html, \*.js, \*.other_extantion)
